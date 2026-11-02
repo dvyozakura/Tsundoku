@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>積読合格</title>
+<meta name="description" content="参考書を投げて積むだけで共通テストの点が上がるゲーム。">
+<meta property="og:title" content="積読合格">
+<meta property="og:description" content="参考書を投げて積むだけで共通テストの点が上がるゲーム。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <section id="entry" class="screen">
+    <div class="entry-scroll">
+      <h1 class="stack" aria-label="積読合格">
+        <span class="sp s1">積<small>新課程 完全対応</small></span>
+        <span class="sp s2">読<small>まなくてよい</small></span>
+        <span class="sp s3">合<small>共通テスト対策</small></span>
+        <span class="sp s4">格<small>投げて覚える</small></span>
+      </h1>
+      <p class="lede">参考書を投げて、机に積む。開かなくても、積めば点が上がる。</p>
+
+      <form id="sheet" class="sheet" aria-label="受験科目の選択">
+        <h2>受験科目をマークしてください</h2>
+        <fieldset>
+          <legend>文理</legend>
+          <div class="marks" id="f-track"></div>
+        </fieldset>
+        <fieldset>
+          <legend>地歴公民 <em>2つ選ぶ</em></legend>
+          <div class="marks" id="f-social"></div>
+        </fieldset>
+        <fieldset>
+          <legend id="sci-legend">理科基礎 <em>2つ選ぶ</em></legend>
+          <div class="marks" id="f-science"></div>
+        </fieldset>
+        <p class="req">必須 国語 英語R 英語L 数学ⅠA 数学ⅡBC 情報Ⅰ</p>
+        <button id="start" type="submit" class="go">試験勉強をはじめる</button>
+      </form>
+      <p id="best" class="best" hidden></p>
+    </div>
+  </section>
+
+  <section id="play" class="screen" hidden>
+    <div class="stage">
+      <canvas id="cv" aria-label="参考書を投げる机と黒板"></canvas>
+      <div class="hud">
+        <div class="when"><b id="date">4月上旬</b></div>
+        <div class="score"><b id="total">0</b><span id="max"> / 1000点</span></div>
+        <button id="mute" class="icon" type="button" aria-label="音を消す"></button>
+      </div>
+      <div id="toast" class="toast" hidden></div>
+    </div>
+    <div class="desk-ui">
+      <p id="source" class="source"></p>
+      <div id="offers" class="offers" role="radiogroup" aria-label="投げる参考書"></div>
+      <div id="strip" class="strip" aria-label="科目ごとの仕上がり"></div>
+    </div>
+  </section>
+
+  <section id="result" class="screen" hidden>
+    <div class="report" id="report"></div>
+  </section>
+</div>
+<script type="module" src="js/ui.js"></script>
+</body>
+</html>
